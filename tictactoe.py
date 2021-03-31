@@ -99,10 +99,12 @@ ________________
 
             self.X = not self.X
 
+        print(self.__str__())
+        
         if self.check_if_tie():
-            print("Game tied")
+            print("Game tied\n")
         else:
-            print(f"{turn} has won!!!")
+            print(f"{turn} has won!!!\n")
 
         while True:
             game_again = input("Want to play again (Y/n): ").lower()
