@@ -83,9 +83,9 @@ ________________
             print(self.__str__())
             turn_number = input(f"{turn}: ")
 
-            try:
+            if turn_number.isdigit():
                 turn_number = int(turn_number)
-            except:
+            else:
                 print("Please enter a valid number")
                 continue
 
