@@ -50,15 +50,23 @@ f'''
         )
 
     def play(self):
-        turn = input("Enter letter which goes first (X/O): ")
+        print("Type \"quit\" at any point in the game to quit the game")
 
-        if turn == "X":
-            self.X = True
-        elif turn == "O":
-            self.X = False
-        else:
-            raise Exception("Player letter is not valid")
-            quit()
+        while True:
+            turn = input("Enter letter which goes first (X/O): ")
+
+            if turn == "X":
+                self.X = True
+                break
+            elif turn == "O":
+                self.X = False
+                break
+            elif turn.lower() == "quit":
+                print()
+                quit()
+            else:
+                print("\nPlayer letter is not valid, please try again")
+                continue
         
         print("\nBox numbers -")
         print(f'''
@@ -82,6 +90,9 @@ ________________
 
             print(self.__str__())
             turn_number = input(f"{turn}: ")
+            
+            if turn_number.lower() == "quit":
+                quit()
 
             if turn_number.isdigit():
                 turn_number = int(turn_number)
