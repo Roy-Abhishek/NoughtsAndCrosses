@@ -53,15 +53,15 @@ f'''
         print("Type \"quit\" at any point in the game to quit the game")
 
         while True:
-            turn = input("Enter letter which goes first (X/O): ")
+            turn = input("Enter letter which goes first (X/O): ").lower()
 
-            if turn == "X":
+            if turn == "x":
                 self.X = True
                 break
-            elif turn == "O":
+            elif turn == "o":
                 self.X = False
                 break
-            elif turn.lower() == "quit":
+            elif turn == "quit":
                 print()
                 quit()
             else:
