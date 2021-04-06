@@ -120,6 +120,7 @@ ________________
         while True:
             game_again = input("Want to play again (Y/n): ").lower()
             if game_again == "y":
+                self.board = [" "] * 9
                 self.play()
                 quit()
             elif game_again == "n":
