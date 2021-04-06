@@ -14,10 +14,10 @@ f'''
 '''
 
     def add_val(self, board_num):
-        if self.X and self.board[board_num - 1] != ("O" and "X"):
+        if self.X and self.board[board_num - 1] != "X" and self.board[board_num - 1] != "O":
             self.board[board_num - 1] = "X"
             return True
-        elif not self.X and self.board[board_num - 1] != ("X" and "O"):
+        elif not self.X and self.board[board_num - 1] != "X" and self.board[board_num - 1] != "O":
             self.board[board_num - 1] = "O"
             return True
         else:
