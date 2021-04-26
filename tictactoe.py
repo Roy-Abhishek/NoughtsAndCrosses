@@ -3,7 +3,7 @@ class TicTacToe:
         self.board = [" "] * 9
         self.X = True
 
-    def __str__(self):
+    def __str__(self) -> str:
         return \
 f'''
  {self.board[0]}  |  {self.board[1]}  |  {self.board[2]}
@@ -13,7 +13,7 @@ f'''
  {self.board[6]}  |  {self.board[7]}  |  {self.board[8]}
 '''
 
-    def add_val(self, board_num):
+    def add_val(self, board_num: int) -> bool:
         if self.X and self.board[board_num - 1] != "X" and self.board[board_num - 1] != "O":
             self.board[board_num - 1] = "X"
             return True
@@ -23,7 +23,7 @@ f'''
         else:
             return False
 
-    def check_if_finished(self):
+    def check_if_finished(self) -> bool:
         return (
             self.board[0] == self.board[1] == self.board[2] and self.board[0] != " " or
             self.board[3] == self.board[4] == self.board[5] and self.board[3] != " " or
@@ -35,7 +35,7 @@ f'''
             self.board[2] == self.board[4] == self.board[6] and self.board[2] != " "
         )
 
-    def check_if_tie(self):
+    def check_if_tie(self) -> bool:
         return (
             self.board[0] != " " and
             self.board[1] != " " and
